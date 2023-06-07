@@ -1,11 +1,21 @@
-import styles from './page.module.css'
+import PortfolioItemsList from './components/portfolio-items-list'
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <section>
-        <header>Works</header>
-      </section>
-    </main>
+    <PortfolioItemsList
+      portfolioItems={
+        [{
+          title: "abc",
+          link: "abc",
+          summary: "abc",
+          fullText: "abc"
+        }, {
+          title: "abc",
+          link: "abc",
+          summary: "abc",
+          fullText: "abc"
+        }]
+      }
+    />
   )
 }
