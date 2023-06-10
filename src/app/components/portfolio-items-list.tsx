@@ -1,4 +1,4 @@
-import type PortfolioItem from '../interfaces/portfolio-item'
+import { PortfolioItem } from '../lib/types.d'
 
 export default function PortfolioItemsList({ portfolioItems }: { portfolioItems: PortfolioItem[] }) {
     return (
@@ -6,8 +6,8 @@ export default function PortfolioItemsList({ portfolioItems }: { portfolioItems:
             <header>Works</header>
             {portfolioItems.map((portfolioItem, i) => (
                 <article key={i}>
-                    <h1>{portfolioItem.title}</h1>
-                    <a href={portfolioItem.link}></a>
+                    <h1>{portfolioItem.Title}</h1>
+                    <a href={portfolioItem.Link}></a>
                     <p>{portfolioItem.Full_Text}</p>
                 </article>
             ))}

@@ -1,5 +1,5 @@
 
-import type PortfolioItem from '../interfaces/portfolio-item'
+import type PortfolioItem from './types.d'
 
 const baseUrl = 'https://jose-strapi-xofl2.ondigitalocean.app/api/'
 

@@ -1,5 +1,5 @@
 import PortfolioItemsList from '@/components/portfolio-items-list'
-import { getAllPortfolioEntries } from '@/api/utils'
+import { getAllPortfolioEntries } from '@/lib/api'
 
 export default async function Home() {
   const portfolioItems = await getAllPortfolioEntries()
