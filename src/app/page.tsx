@@ -1,21 +1,17 @@
 import PortfolioItemsList from './components/portfolio-items-list'
 
-export default function Home() {
+async function getData() {
+  const res = await fetch('https://jose-strapi-xofl2.ondigitalocean.app/api/portfolio-entries')
+  if (!res.ok) {
+    throw new Error('Failed to fetch portfolio items')
+  }
+
+  return res.json()
+}
+export default async function Home() {
+  const portfolioItems = await getData()
+
   return (
-    <PortfolioItemsList
-      portfolioItems={
-        [{
-          title: "abc",
-          link: "abc",
-          summary: "abc",
-          fullText: "abc"
-        }, {
-          title: "abc",
-          link: "abc",
-          summary: "abc",
-          fullText: "abc"
-        }]
-      }
-    />
+    <PortfolioItemsList portfolioItems={portfolioItems} />
   )
 }
