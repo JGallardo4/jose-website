@@ -1,8 +1,7 @@
 type PortfolioItem = {
     title: string
     link: string
-    summary: string
-    fullText: string
+    Full_Text: string
 }
 
 export default PortfolioItem

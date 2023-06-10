@@ -8,8 +8,7 @@ export default function PortfolioItemsList({ portfolioItems }: { portfolioItems:
                 <article key={i}>
                     <h1>{portfolioItem.title}</h1>
                     <a href={portfolioItem.link}></a>
-                    <p>{portfolioItem.summary}</p>
-                    <p>{portfolioItem.fullText}</p>
+                    <p>{portfolioItem.Full_Text}</p>
                 </article>
             ))}
         </section>
