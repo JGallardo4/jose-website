@@ -1,11 +1,11 @@
 
-import type PortfolioItem from './types.d'
+import type { PortfolioItem } from '@/lib/types.d'
 
 const baseUrl = 'https://jose-strapi-xofl2.ondigitalocean.app/api/'
 
 export const getAllPortfolioEntries = async () => {
     try {
-        const response = await fetch(baseUrl + 'portfolio-entries');
+        const response = await fetch(baseUrl + 'portfolio-entries?populate=*');
 
         if (!response.ok) {
             throw new Error(response.statusText)
