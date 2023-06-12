@@ -1,14 +1,15 @@
 import PortfolioItemsList from '@/components/portfolio-items-list'
-import { getAllPortfolioEntries } from '@/lib/api'
+import { Suspense } from 'react'
+import SocialMediaList from './components/social-media-list'
 
-export default async function Home() {
-  const portfolioItems = await getAllPortfolioEntries()
+export default function Home() {
 
-  if (!portfolioItems) {
-    return <p>Not found</p>
-  }
-
-  return (
-    <PortfolioItemsList portfolioItems={portfolioItems} />
+  return (<>
+    <Suspense fallback={<p>Loading portfolio...</p>}>
+      <PortfolioItemsList />
+    </Suspense>
+    <Suspense fallback={<p>Loading social media links...</p>}>
+      <SocialMediaList />
+    </Suspense></>
   )
 }
