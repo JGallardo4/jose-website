@@ -1,5 +1,7 @@
 
 import type { PortfolioItem, SocialMediaLink } from '@/lib/types.d'
+import { cache } from 'react'
+import 'server-only'
 
 const baseUrl = 'https://jose-strapi-xofl2.ondigitalocean.app/api/'
 
