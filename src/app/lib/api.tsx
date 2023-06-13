@@ -1,13 +1,12 @@
 
 import type { PortfolioItem, SocialMediaLink } from '@/lib/types.d'
-import { cache } from 'react'
 import 'server-only'
 
-const baseUrl = 'https://jose-strapi-xofl2.ondigitalocean.app/api/'
+const baseUrl = process.env.CMS_API_URL
 
 export const getAllPortfolioEntries = async () => {
     try {
-        const response = await fetch(baseUrl + 'portfolio-entries?populate=*', { next: { revalidate: 60 } });
+        const response = await fetch(baseUrl + 'portfolio-entries?populate=*');
 
         if (!response.ok) {
             throw new Error(response.statusText)
@@ -27,7 +26,7 @@ export const getAllPortfolioEntries = async () => {
 
 export const getAllsocialMediaLinks = async () => {
     try {
-        const response = await fetch(baseUrl + 'social-media-links?populate=*', { next: { revalidate: 60 } });
+        const response = await fetch(baseUrl + 'social-media-links?populate=*');
 
         if (!response.ok) {
             throw new Error(response.statusText)
