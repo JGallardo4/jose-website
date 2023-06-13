@@ -7,7 +7,7 @@ const baseUrl = 'https://jose-strapi-xofl2.ondigitalocean.app/api/'
 
 export const getAllPortfolioEntries = async () => {
     try {
-        const response = await fetch(baseUrl + 'portfolio-entries?populate=*');
+        const response = await fetch(baseUrl + 'portfolio-entries?populate=*', { next: { revalidate: 60 } });
 
         if (!response.ok) {
             throw new Error(response.statusText)
@@ -27,7 +27,7 @@ export const getAllPortfolioEntries = async () => {
 
 export const getAllsocialMediaLinks = async () => {
     try {
-        const response = await fetch(baseUrl + 'social-media-links?populate=*');
+        const response = await fetch(baseUrl + 'social-media-links?populate=*', { next: { revalidate: 60 } });
 
         if (!response.ok) {
             throw new Error(response.statusText)
