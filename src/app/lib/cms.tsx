@@ -6,7 +6,7 @@ const baseUrl = process.env.CMS_API_URL
 
 export const getAllPortfolioEntries = async () => {
     try {
-        const response = await fetch(baseUrl + 'portfolio-entries?populate=*');
+        const response = await fetch(baseUrl + 'portfolio-entries?populate=*', { next: { tags: ['revalidate'] } });
 
         if (!response.ok) {
             throw new Error(response.statusText)
@@ -26,7 +26,7 @@ export const getAllPortfolioEntries = async () => {
 
 export const getAllsocialMediaLinks = async () => {
     try {
-        const response = await fetch(baseUrl + 'social-media-links?populate=*');
+        const response = await fetch(baseUrl + 'social-media-links?populate=*', { next: { tags: ['revalidate'] } });
 
         if (!response.ok) {
             throw new Error(response.statusText)

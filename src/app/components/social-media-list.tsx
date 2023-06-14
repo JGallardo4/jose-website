@@ -1,5 +1,5 @@
 import ConditionalRender from '@/components/conditional-render'
-import { getAllsocialMediaLinks } from '@/lib/api'
+import { getAllsocialMediaLinks } from '@/lib/cms'
 
 export default async function SocialMediaList() {
     const socialMediaLinks = await getAllsocialMediaLinks()

@@ -1,4 +1,4 @@
-import { getAllPortfolioEntries } from '@/lib/api'
+import { getAllPortfolioEntries } from '@/lib/cms'
 import ConditionalRender from '@/components/conditional-render'
 
 export default async function PortfolioItemsList() {
