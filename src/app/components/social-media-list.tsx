@@ -14,15 +14,17 @@ export default async function SocialMediaList() {
                 <h2>Social Media</h2>
             </header>
             <main>
-                {socialMediaLinks.map((link, i) => (
-                    <article key={i}>
-                        <p>Username: {link.Username}</p>
-                        <p>Platform: {link.Platform}</p>
-                        <p>
-                            <a href={link.Link.URL}>{link.Link.Display_Text}</a>
-                        </p>
-                    </article>
-                ))}
+                {!socialMediaLinks ?
+                    <p>No items found</p> :
+                    socialMediaLinks.map((link, i) => (
+                        <article key={i}>
+                            <p>Username: {link.Username}</p>
+                            <p>Platform: {link.Platform}</p>
+                            <p>
+                                <a href={link.Link.URL}>{link.Link.Display_Text}</a>
+                            </p>
+                        </article>
+                    ))}
             </main>
         </section>
     )
