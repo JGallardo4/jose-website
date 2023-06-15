@@ -5,5 +5,5 @@ export async function GET(request: NextRequest) {
     console.log(process.env.CMS_API_URL)
     // const tag = request.nextUrl.searchParams.get('tag')
     // revalidateTag(tag ?? "revalidate")
-    // return NextResponse.json({ revalidated: true, now: Date.now() })
+    return NextResponse.json({ revalidated: true, now: Date.now() })
 }
