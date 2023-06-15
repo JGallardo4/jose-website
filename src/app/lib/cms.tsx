@@ -1,6 +1,5 @@
 
 import type { PortfolioItem, SocialMediaLink } from '@/lib/types.d'
-import 'server-only'
 
 const baseUrl = process.env.CMS_API_URL
 
