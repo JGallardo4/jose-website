@@ -1,8 +1,9 @@
-import { NextResponse } from 'next/server';
-import { revalidatePath } from 'next/cache';
+import { NextRequest, NextResponse } from 'next/server';
+import { revalidateTag } from 'next/cache';
 
-export async function POST() {
-  revalidatePath('/')
+export async function GET(request: NextRequest) {
+  const tag = request.nextUrl.searchParams.get('tag')
+  revalidateTag(tag ?? 'revalidate')
 
   return NextResponse.json({
     revalidated: true,

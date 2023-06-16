@@ -1,6 +1,8 @@
 
 import type { PortfolioItem, SocialMediaLink } from '@/lib/types.d'
 
+export const fetchCache = 'force-no-store'
+
 const baseUrl = process.env.CMS_API_URL
 
 export const getAllPortfolioEntries = async () => {
