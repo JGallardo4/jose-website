@@ -6,7 +6,7 @@ export const getAllPortfolioEntries = async () => {
   try {
     const response = await fetch(baseUrl + 'portfolio-entries?populate=*', {
       next: { tags: ['revalidate'] },
-      cache: 'no-store',
+      headers: { 'Cache-Control': 'no-store' },
     });
 
     if (!response.ok) {
@@ -29,7 +29,7 @@ export const getAllsocialMediaLinks = async () => {
   try {
     const response = await fetch(baseUrl + 'social-media-links?populate=*', {
       next: { tags: ['revalidate'] },
-      cache: 'no-store',
+      headers: { 'Cache-Control': 'no-store' },
     });
 
     if (!response.ok) {
